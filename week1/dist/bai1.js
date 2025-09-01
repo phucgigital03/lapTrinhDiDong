@@ -1,2 +1,25 @@
 "use strict";
-console.log("hello");
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Person = void 0;
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    getAge() {
+        return this.age;
+    }
+    getName() {
+        return this.name;
+    }
+    setAge(age) {
+        this.age = age;
+    }
+    setNumber(age) {
+        this.age = age;
+    }
+    displayInfo() {
+        console.log(`Name: ${this.name}, Age: ${this.age}`);
+    }
+}
+exports.Person = Person;
