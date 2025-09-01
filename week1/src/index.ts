@@ -11,7 +11,17 @@ import { MathUtil } from "./bai18";
 import { Bike, CarB19 } from "./bai19";
 import { Student } from "./bai2";
 import { AnimalB20, CatB20, DogB20, makeAllSpeak } from "./bai20";
+import { Repository } from "./bai21";
+import { Stack } from "./bai22";
+import { CardPayment, CashPayment } from "./bai23";
+import { AirConditioner, Fan } from "./bai24";
+import { Shape } from "./bai25";
+import { Order } from "./bai26";
+import { Teacher } from "./bai27";
+import { CatB28, DogB28 } from "./bai28";
+import { CarB29, Robot } from "./bai29";
 import { Car } from "./bai3";
+import { School, StudentB30, TeacherB30 } from "./bai30";
 import { Rectangle } from "./bai4";
 import { BankAccount } from "./bai5";
 import { Book } from "./bai6";
@@ -139,4 +149,63 @@ const animals: AnimalB20[] = [
   new CatB20("Milo")
 ];
 makeAllSpeak(animals);
+
+const repo = new Repository<number>();
+repo.add(1); repo.add(2);
+console.log(repo.getAll());
+
+// Demo (optional)
+const s = new Stack<number>();
+s.push(10); s.push(20);
+console.log(s.peek()); // 20
+console.log(s.pop());  // 20
+console.log(s.isEmpty()); // false
+
+// Demo (optional)
+const cash = new CashPayment();
+cash.pay(100);
+const card = new CardPayment("1234567812345678");
+card.pay(250);
+
+
+// Demo (optional)
+const fan = new Fan("Panasonic");
+const ac = new AirConditioner("Daikin");
+fan.turnOn();
+ac.turnOn();
+
+// Demo (optional)
+console.log(Shape.describe());
+
+// Demo (optional)
+const order = new Order();
+order.addProduct(new Product("Pen", 10));
+order.addProduct(new Product("Keyboard", 80));
+console.log("Total:", order.totalPrice());
+
+
+// Demo (optional)
+const t = new Teacher("Alice", 35, "Math");
+console.log(t.introduce());
+
+// Demo (optional)
+const dog = new DogB28("Rex");
+const cat = new CatB28("Mimi");
+dog.speak(); // Rex: Woof
+cat.speak(); // Mimi: Meow
+
+// Demo (optional)
+const carB29 = new CarB29("Toyota");
+const robot = new Robot("R2D2");
+carB29.move();
+robot.move();
+
+
+// Demo (optional)
+const school = new School();
+school.addTeacher(new TeacherB30(1, "Alice", "Math"));
+school.addTeacher(new TeacherB30(2, "Bob", "History"));
+school.addStudent(new StudentB30(1, "Charlie", 9));
+school.addStudent(new StudentB30(2, "Dana", 10));
+school.displayInfo();
 
