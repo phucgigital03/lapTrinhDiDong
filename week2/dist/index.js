@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const bai10_1 = require("./bai10");
+const bai20_1 = require("./bai20");
 // return10.then((res)=>{
 //     console.log(res);
 // });
@@ -54,4 +54,42 @@ const bai10_1 = require("./bai10");
 //   .catch(err => {
 //     console.error("Processing error:", err);
 //   });
-(0, bai10_1.doneFunc)();
+// doneFunc();
+// helloAsync().then(res => {
+//     console.log(res);
+// }).catch(err => {
+//     console.error(err);
+// });
+// callSimulatedTask();
+// fetchData();
+// getNum(2).then(res=>{
+//     console.log(res);
+// }); 
+// process2Func().then(res=>{
+//     console.log(res);
+// }).catch(err=>{
+//     console.error(err);
+// });
+// process2FuncParallel().then(res=>{
+//     console.log(res);
+// }).catch(err=>{
+//     console.error(err);
+// });
+// demoBai17();
+// demoBai17_2();
+// getUserInfo().then(res => {
+//     console.log(res);
+// }).catch(err => {
+//     console.error(err);
+// });
+// fetchUsersSequential([1,2,3,4]).then((res)=>{
+//     console.log("sequentially running");
+//     console.log(res);
+// });
+// fetchUsers([1,2,3,4]).then((res)=>{
+//     console.log("parallely running");
+//     console.log(res);
+// });
+(0, bai20_1.fetchWithTimeout)()
+    .then(res => console.log(res))
+    .catch(err => console.error('Error:', err.message));
