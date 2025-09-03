@@ -1,6 +1,15 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const bai20_1 = require("./bai20");
+const bai30_1 = require("./bai30");
 // return10.then((res)=>{
 //     console.log(res);
 // });
@@ -90,6 +99,55 @@ const bai20_1 = require("./bai20");
 //     console.log("parallely running");
 //     console.log(res);
 // });
-(0, bai20_1.fetchWithTimeout)()
-    .then(res => console.log(res))
-    .catch(err => console.error('Error:', err.message));
+// fetchWithTimeout()
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+// fetchOneTodo()
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+// fetchSameTodoMultiple(3)
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+// fetchCompletedTodos()
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+// (async () => {
+//   const created = await postData({ title: "Test", body: "Hello world", userId: 1 });
+//   console.log(created);
+// })();
+// downloadFile("example.txt").then(() => {
+//   console.log("File downloaded successfully");
+// }).catch(err => {
+//   console.error("Error downloading file:", err);
+// });
+// waitFiveSeconds().then(res => {
+//   console.log(res);
+// }).catch(err => {
+//   console.error(err);
+// });
+// (async () => {
+//   const results = await batchProcess();
+//   console.log(results);
+// })();
+// (async () => {
+//   const tasks: Task<string>[] = [
+//     makeTask("A", 500),
+//     makeTask("B", 300),
+//     makeTask("C", 700),
+//   ];
+//   const results = await queueProcess(tasks);
+//   console.log("Results:", results);
+// })();
+// bai27
+// (async () => {
+//   try {
+//     const data = await fetchWithRetry('https://jsonplaceholder.typicode.com/todos/-1', 3);
+//     console.log('Success:', data);
+//   } catch (e) {
+//     console.error('Failed:', e);
+//   }
+// })();
+// bai30
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    yield (0, bai30_1.demoFetchTodosAllSettled)();
+}))();

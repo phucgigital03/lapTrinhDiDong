@@ -11,7 +11,17 @@ import { getUserInfo } from "./bai18";
 import { fetchUsers, fetchUsersSequential } from "./bai19";
 import { return10 } from "./bai2";
 import { fetchWithTimeout } from "./bai20";
+import { fetchOneTodo } from "./bai21";
+import { fetchSameTodoMultiple } from "./bai22";
+import { fetchCompletedTodos } from "./bai23";
+import { postData } from "./bai24";
+import { downloadFile } from "./bai25";
+import { waitFiveSeconds } from "./bai26";
+import { fetchWithRetry } from "./bai27";
+import { batchProcess } from "./bai28";
+import { makeTask, queueProcess, Task } from "./bai29";
 import { returnRej } from "./bai3";
+import { demoFetchTodosAllSettled } from "./bai30";
 import { returnRandomNumber } from "./bai4";
 import { getRandomNumber } from "./bai5";
 import { task } from "./bai6";
@@ -132,6 +142,68 @@ import { processArray } from "./bai9";
 //     console.log(res);
 // });
 
-fetchWithTimeout()
-  .then(res => console.log(res))
-  .catch(err => console.error('Error:', err.message));
+// fetchWithTimeout()
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+
+
+// fetchOneTodo()
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+
+
+// fetchSameTodoMultiple(3)
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+
+// fetchCompletedTodos()
+//   .then(res => console.log(res))
+//   .catch(err => console.error('Error:', err.message));
+
+// (async () => {
+//   const created = await postData({ title: "Test", body: "Hello world", userId: 1 });
+//   console.log(created);
+// })();
+
+// downloadFile("example.txt").then(() => {
+//   console.log("File downloaded successfully");
+// }).catch(err => {
+//   console.error("Error downloading file:", err);
+// });
+
+// waitFiveSeconds().then(res => {
+//   console.log(res);
+// }).catch(err => {
+//   console.error(err);
+// });
+
+// (async () => {
+//   const results = await batchProcess();
+//   console.log(results);
+// })();
+
+// (async () => {
+//   const tasks: Task<string>[] = [
+//     makeTask("A", 500),
+//     makeTask("B", 300),
+//     makeTask("C", 700),
+//   ];
+//   const results = await queueProcess(tasks);
+//   console.log("Results:", results);
+// })();
+
+// bai27
+// (async () => {
+//   try {
+//     const data = await fetchWithRetry('https://jsonplaceholder.typicode.com/todos/-1', 3);
+//     console.log('Success:', data);
+//   } catch (e) {
+//     console.error('Failed:', e);
+//   }
+// })();
+
+// bai30
+(async () => {
+  await demoFetchTodosAllSettled();
+})();
+
